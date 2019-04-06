@@ -17,8 +17,20 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/demo', function () {
     return view('demo');
 });
+
+Route::get('/upload', function () {
+    return view('file.upload');
+})->name('upload');
+
+Route::get('/list-file', function () {
+    return view('file.list-file');
+})->name('list-file');
+
+Route::get('/detail', function () {
+    return view('file.detail-file');
+})->name('detail-file');
