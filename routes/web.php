@@ -36,5 +36,8 @@ Route::get('/detail', function () {
 })->name('detail-file');
 
 Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout', function () {
+    return abort(404);
+});
 
 //Route::get('/home', 'HomeController@index')->name('home');
