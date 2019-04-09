@@ -17,7 +17,7 @@
 	  <br>
 	  <br>
       <div class="container ">
-		<h1> Selamat Datang di DropBix Budi! </h1>
+		<h1> Selamat Datang di DropBix {{Auth::user()->name}} </h1>
 		
 		<br>
 		<br>
@@ -34,21 +34,13 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-				<td>Tugas skripsi</td>
-				<td>16-03-2019</td>
-				<td> <a href="{{ route('detail-file') }}"><button type="submit">Detail</button></a></td>
-			  </tr>
-			  <tr>
-				<td>Tugas kimia 2</td>
-				<td>16-03-2019</td>
-				<td> <a href="{{ route('detail-file') }}" ><button type="submit">Detail</button></a></td>
-			  </tr>
-			  <tr>
-				<td>Tugas matematik 3</td>
-				<td>16-03-2019</td>
-				<td> <a href="{{ route('detail-file') }}" ><button type="submit">Detail</button></a></td>
-			  </tr>
+			@foreach($files as $file)
+			<tr>
+			<td>{{$file->name}}</td>
+			<td>{{$file->updated_at}}</td>
+			<td> <a href="{{route(('detail-file'), $file->id)}}"><button type="submit">Detail</button></a></td>
+			</tr>
+			@endforeach
 			</tbody>
 		  </table>
 

@@ -19,10 +19,11 @@
 		<h3>Silahkan Upload Dokumen Kamu!</h3>
 			<br>
 		<br>
-		<form>
+		<form role="form" method="post" action="{{route('upload')}}"  enctype="multipart/form-data">
+		{{csrf_field()}}
 		  <div class="form-group">
 			<label for="exampleInputEmail1">Nama File</label>
-			<input type="text" class="form-control" placeholder="Masukkan nama file">
+			<input type="text" name="nama_file" class="form-control" placeholder="Masukkan nama file">
 		  </div>
 	
 			
@@ -31,7 +32,7 @@
 
 				
 				<div class="file-upload-wrapper" data-text="Pilih File Kamu!">
-				  <input name="file-upload-field" type="file" class="file-upload-field" value="">
+				  <input name="file" type="file" class="file-upload-field" value="">
 				</div>
 
 			</div>
